@@ -8,4 +8,3 @@ exports.configFirebase = {
     appId: "1:293772665725:web:a37650ed8b70bde686a214",
     measurementId: "G-CCP4SRY5M4"
 };
-

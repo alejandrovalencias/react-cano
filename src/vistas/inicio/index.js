@@ -1,7 +1,7 @@
 import React from 'react';
 import withFirebaseAuth from 'react-with-firebase-auth';
 import * as firebase from 'firebase';
-import 'firebase/auth'
+import 'firebase/auth';
 import { configFirebase } from '../../constantes'
 
 const firebaseApp = firebase.initializeApp(configFirebase);
@@ -15,15 +15,18 @@ const Inicio = (props) => {
 
         }
         {
-            user ? <button onClick={signOut} >Cerrar sesion</button> :
+            user ? <div>
+                <button onClick={signOut} >Cerrar sesion</button>
+                <br></br>
+                <br></br>
+                <br></br>
+                <button onClick={() => {
+                    props.history.push('/form')
+                }}>Ir a ver formulario</button>
+            </div>
+                :
                 <div>
                     <button onClick={signInWithGoogle}>Iniciar Sesion con Google</button>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <button onClick={() => {
-                        props.history.push('/form')
-                    }}>Ir a ver formulario</button>
                 </div>
         }
     </div>

@@ -1,14 +1,18 @@
 import React from 'react';
 
-export const pruebaContext = React.createContext('pruebaContext')
-
-export const EncabezadoProvider = (props) => {
-    
+const funcionPrueba = () => {
+    alert("Hola Mundo")
+}
+export const ContextPrueba = React.createContext({
+    funcionPrueba
+})
+export const ProviderContext = (props) => {
+    const xd = "hola"
     return (
-        <EncabezadoContext.Provider value={{
-
-        }} />
+        <ContextPrueba.Provider value={{
+           xd
+        }}>
+            {props.children}
+        </ContextPrueba.Provider>
     )
-
-
 }
